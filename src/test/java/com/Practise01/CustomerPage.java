@@ -3,6 +3,7 @@ package com.Practise01;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 
@@ -26,7 +27,18 @@ public class CustomerPage {
         driver.findElement(By.xpath("//input[@name='address_2']")).sendKeys("Sri Lanka");
         driver.findElement(By.xpath("//input[@name='city']")).sendKeys("Homagama");
         driver.findElement(By.xpath("//input[@id='state']")).sendKeys("Test");
-        Thread.sleep(2000);
+        driver.findElement(By.xpath("//input[@id='zip']")).sendKeys("1001");
+        driver.findElement(By.xpath("//input[@id='country']")).sendKeys("Sri Lanka");
+        driver.findElement(By.xpath("//textarea[@name='comments']")).sendKeys("Comment for reference");
+        driver.findElement(By.xpath("//textarea[@name='internal_notes']")).sendKeys("Textarea for Typing");
+        driver.findElement(By.xpath("//input[@name='company_name']")).sendKeys("MSTI");
+        driver.findElement(By.xpath("//input[@name='account_number']")).sendKeys("123456");
+        WebElement Element01=driver.findElement(By.xpath("//input[@name='override_default_tax']"));
+        Element01.click();
+        Boolean Elementstatus=Element01.isSelected();
+        System.out.println(Elementstatus);
+
+        Thread.sleep(5000);
 
     }
 }
