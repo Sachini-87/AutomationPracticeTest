@@ -22,4 +22,8 @@ public class GetTextMthd {
 
         driver.close();
     }
+
+
+
+
 }

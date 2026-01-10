@@ -33,12 +33,17 @@ public class CustomerPage {
         driver.findElement(By.xpath("//textarea[@name='internal_notes']")).sendKeys("Textarea for Typing");
         driver.findElement(By.xpath("//input[@name='company_name']")).sendKeys("MSTI");
         driver.findElement(By.xpath("//input[@name='account_number']")).sendKeys("123456");
-        WebElement Element01=driver.findElement(By.xpath("//input[@name='override_default_tax']"));
-        Element01.click();
-        Boolean Elementstatus=Element01.isSelected();
-        System.out.println(Elementstatus);
+       // WebElement Element01=driver.findElement(By.xpath("//input[@name='override_default_tax']"));
+       // Element01.click();
+        //Boolean Elementstatus=Element01.isSelected();
+        //System.out.println(Elementstatus);
 
         Thread.sleep(5000);
+
+        WebElement overrideTaxCheckbox = driver.findElement(By.name("override_default_tax"));
+        overrideTaxCheckbox.click();
+
+        System.out.println("Override tax selected: " + overrideTaxCheckbox.isSelected());
 
     }
 }
